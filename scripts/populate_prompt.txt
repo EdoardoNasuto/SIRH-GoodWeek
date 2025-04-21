@@ -1,0 +1,13 @@
+[LDD]
+
+GoodWeek est une entreprise répartie sur 5 sites en France, riche de 340 employés et comprenant à la fois une activité de Recherche et Développement pour les pneumatiques, une activité Marketing et Commercial et une activité de production des pneumatiques. Le SIRH devrait permettre de gérer l’ensemble des employés du groupe pour ce concerne les activités.
+ 
+Je veux peupler cette bd avec des données cohérentes entre chaque table (au moins 10 éléments dans chaque table) sous forme de sequilize (les models sont déjà créer) (nom des tables en minuscule) 
+
+Commence par la génération par la première table (sous forme de const : 
+const competences = [
+    {},
+];)
+Quand tu a fini je te dirai de passer à la deuxième et ainsi de suite.
+
+IMPORTANT : sans insérer de clés primaires (id_client, etc...) mais inserer les clés étrangères

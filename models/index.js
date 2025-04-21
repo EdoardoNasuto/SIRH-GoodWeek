@@ -32,7 +32,9 @@ Object.values(db).forEach(model => {
   }
 });
 
-// Insert script here
+// Populate mod :
+//import { populate } from '../scripts/populate.js';
+//await populate(db);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
