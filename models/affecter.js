@@ -12,7 +12,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.STRING(50),
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Affecter.associate = (models) => {
         Affecter.belongsTo(models.Employe, { foreignKey: 'id_employe' });

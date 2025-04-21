@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const Documenter_projet = sequelize.define('Documenter_projet', {
-    }, {});
+    }, { freezeTableName: true });
 
     Documenter_projet.associate = (models) => {
         Documenter_projet.belongsTo(models.Projet, { foreignKey: 'id_projet' });

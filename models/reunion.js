@@ -10,7 +10,7 @@ export default (sequelize, DataTypes) => {
         },
         lieu_reunion: DataTypes.STRING(50),
         compte_rendu_reunion: DataTypes.TEXT,
-    }, {});
+    }, { freezeTableName: true });
 
     Reunion.associate = (models) => {
         Reunion.hasMany(models.Comporter, { foreignKey: 'id_reunion' });

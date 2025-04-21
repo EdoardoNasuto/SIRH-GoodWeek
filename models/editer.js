@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         commentaire: DataTypes.TEXT,
-    }, {});
+    }, { freezeTableName: true });
 
     Editer.associate = (models) => {
         Editer.belongsTo(models.Employe, { foreignKey: 'id_employe' });

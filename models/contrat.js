@@ -17,7 +17,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Contrat.associate = (models) => {
         Contrat.belongsTo(models.Employe, { foreignKey: 'id_employe' });

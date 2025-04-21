@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Conge.associate = (models) => {
         Conge.belongsTo(models.Employe, { foreignKey: 'id_employe' });

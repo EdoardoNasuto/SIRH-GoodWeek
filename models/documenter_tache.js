@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
     const Documenter_tache = sequelize.define('Documenter_tache', {
-    }, {});
+    }, { freezeTableName: true });
 
     Documenter_tache.associate = (models) => {
         Documenter_tache.belongsTo(models.Tache, { foreignKey: 'id_tache' });

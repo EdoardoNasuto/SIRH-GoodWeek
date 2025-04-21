@@ -105,7 +105,7 @@ def generate_model(table_name, data):
         else:
             lines.append(f"        {name}: {dtype},")
 
-    lines.append(f"    }}, {{}});\n")
+    lines.append(f"    }}, {{ freezeTableName: true }});\n")
 
     if associations:
         lines.append(f"    {table_name}.associate = (models) => {{")

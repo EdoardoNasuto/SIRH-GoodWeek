@@ -6,7 +6,7 @@ export default (sequelize, DataTypes) => {
         },
         email_client: DataTypes.STRING(50),
         telephone_client: DataTypes.STRING(50),
-    }, {});
+    }, { freezeTableName: true });
 
     Client.associate = (models) => {
         Client.hasMany(models.Projet, { foreignKey: 'id_client' });

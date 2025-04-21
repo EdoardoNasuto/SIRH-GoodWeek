@@ -8,7 +8,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Utiliser.associate = (models) => {
         Utiliser.belongsTo(models.Tache, { foreignKey: 'id_tache' });

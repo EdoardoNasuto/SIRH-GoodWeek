@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         quantite_produit: DataTypes.STRING(50),
-    }, {});
+    }, { freezeTableName: true });
 
     Produire.associate = (models) => {
         Produire.belongsTo(models.Projet, { foreignKey: 'id_projet' });

@@ -11,7 +11,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Livrable.associate = (models) => {
         Livrable.belongsTo(models.Projet, { foreignKey: 'id_projet' });

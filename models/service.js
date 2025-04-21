@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         description_service: DataTypes.STRING(50),
-    }, {});
+    }, { freezeTableName: true });
 
     Service.associate = (models) => {
         Service.hasMany(models.Employe, { foreignKey: 'id_service' });

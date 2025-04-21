@@ -10,7 +10,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Ressource.associate = (models) => {
         Ressource.belongsTo(models.Site, { foreignKey: 'id_site' });

@@ -15,7 +15,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Tache.associate = (models) => {
         Tache.belongsTo(models.Projet, { foreignKey: 'id_projet' });

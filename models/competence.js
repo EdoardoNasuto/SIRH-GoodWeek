@@ -5,7 +5,7 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         description: DataTypes.TEXT,
-    }, {});
+    }, { freezeTableName: true });
 
     Competence.associate = (models) => {
         Competence.hasMany(models.Maitriser, { foreignKey: 'id_competence' });

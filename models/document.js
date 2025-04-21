@@ -16,7 +16,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Document.associate = (models) => {
         Document.hasMany(models.Documenter_projet, { foreignKey: 'id_document' });

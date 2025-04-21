@@ -12,7 +12,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Produit.associate = (models) => {
         Produit.hasMany(models.Produire, { foreignKey: 'id_produit' });

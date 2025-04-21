@@ -39,7 +39,7 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.STRING(50),
             allowNull: false
         },
-    }, {});
+    }, { freezeTableName: true });
 
     Employe.associate = (models) => {
         Employe.belongsTo(models.Site, { foreignKey: 'id_site' });
