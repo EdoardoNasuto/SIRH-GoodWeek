@@ -32,6 +32,8 @@ Object.values(db).forEach(model => {
   }
 });
 
+// Insert script here
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
