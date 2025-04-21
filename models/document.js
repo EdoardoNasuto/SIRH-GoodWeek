@@ -19,8 +19,8 @@ export default (sequelize, DataTypes) => {
     }, {});
 
     Document.associate = (models) => {
-        Document.hasMany(models.Document_projet, { foreignKey: 'id_document' });
-        Document.hasMany(models.Document_tache, { foreignKey: 'id_document' });
+        Document.hasMany(models.Documenter_projet, { foreignKey: 'id_document' });
+        Document.hasMany(models.Documenter_tache, { foreignKey: 'id_document' });
         Document.hasMany(models.Editer, { foreignKey: 'id_document' });
     };
 

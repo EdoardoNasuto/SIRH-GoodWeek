@@ -8,7 +8,7 @@ export default (sequelize, DataTypes) => {
     }, {});
 
     Competence.associate = (models) => {
-        Competence.hasMany(models.Niveau_employe, { foreignKey: 'id_competence' });
+        Competence.hasMany(models.Maitriser, { foreignKey: 'id_competence' });
     };
 
     return Competence;

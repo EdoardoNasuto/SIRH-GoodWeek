@@ -46,9 +46,9 @@ export default (sequelize, DataTypes) => {
         Employe.belongsTo(models.Service, { foreignKey: 'id_service' });
         Employe.hasMany(models.Contrat, { foreignKey: 'id_employe' });
         Employe.hasMany(models.Conge, { foreignKey: 'id_employe' });
-        Employe.hasMany(models.Niveau_employe, { foreignKey: 'id_employe' });
-        Employe.hasMany(models.Affectation, { foreignKey: 'id_employe' });
-        Employe.hasMany(models.Participant_reunion, { foreignKey: 'id_employe' });
+        Employe.hasMany(models.Maitriser, { foreignKey: 'id_employe' });
+        Employe.hasMany(models.Affecter, { foreignKey: 'id_employe' });
+        Employe.hasMany(models.Participer, { foreignKey: 'id_employe' });
         Employe.hasMany(models.Editer, { foreignKey: 'id_employe' });
     };
 

@@ -123,10 +123,22 @@ def generate_model(table_name, data):
     return "\n".join(lines)
 
 
+def clear_model_directory(output_dir):
+    """Vider le dossier models en conservant index.js"""
+    for filename in os.listdir(output_dir):
+        file_path = os.path.join(output_dir, filename)
+        # Supprimer tous les fichiers sauf index.js
+        if filename != 'index.js' and os.path.isfile(file_path):
+            os.remove(file_path)
+
+
 def main():
     input_file = "lld.sql"
     output_dir = "../models"
     os.makedirs(output_dir, exist_ok=True)
+
+    # Vider le dossier models avant de générer les nouveaux modèles
+    clear_model_directory(output_dir)
 
     with open(input_file, 'r') as f:
         content = f.read()

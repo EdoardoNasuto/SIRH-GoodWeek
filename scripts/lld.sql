@@ -146,7 +146,7 @@ CREATE TABLE Conge(
    FOREIGN KEY(id_employe) REFERENCES Employe(id_employe)
 );
 
-CREATE TABLE Niveau_employe(
+CREATE TABLE Maitriser(
    id_employe INT,
    id_competence INT,
    niveau BYTE,
@@ -155,7 +155,7 @@ CREATE TABLE Niveau_employe(
    FOREIGN KEY(id_competence) REFERENCES Competence(id_competence)
 );
 
-CREATE TABLE Affectation(
+CREATE TABLE Affecter(
    id_employe INT,
    id_tache INT,
    id_affectation VARCHAR(50) NOT NULL,
@@ -167,7 +167,7 @@ CREATE TABLE Affectation(
    FOREIGN KEY(id_tache) REFERENCES Tache(id_tache)
 );
 
-CREATE TABLE Reunir(
+CREATE TABLE Comporter(
    id_projet INT,
    id_reunion VARCHAR(50),
    PRIMARY KEY(id_projet, id_reunion),
@@ -175,7 +175,7 @@ CREATE TABLE Reunir(
    FOREIGN KEY(id_reunion) REFERENCES Reunion(id_reunion)
 );
 
-CREATE TABLE Participant_reunion(
+CREATE TABLE Participer(
    id_employe INT,
    id_reunion VARCHAR(50),
    presence_reunion LOGICAL,
@@ -185,7 +185,7 @@ CREATE TABLE Participant_reunion(
    FOREIGN KEY(id_reunion) REFERENCES Reunion(id_reunion)
 );
 
-CREATE TABLE Document_projet(
+CREATE TABLE Documenter_projet(
    id_projet INT,
    id_document VARCHAR(50),
    PRIMARY KEY(id_projet, id_document),
@@ -193,7 +193,7 @@ CREATE TABLE Document_projet(
    FOREIGN KEY(id_document) REFERENCES Document(id_document)
 );
 
-CREATE TABLE Document_tache(
+CREATE TABLE Documenter_tache(
    id_tache INT,
    id_document VARCHAR(50),
    PRIMARY KEY(id_tache, id_document),
@@ -201,7 +201,7 @@ CREATE TABLE Document_tache(
    FOREIGN KEY(id_document) REFERENCES Document(id_document)
 );
 
-CREATE TABLE Produit_projet(
+CREATE TABLE Produire(
    id_projet INT,
    id_produit VARCHAR(50),
    prix_produit CURRENCY NOT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE Produit_projet(
    FOREIGN KEY(id_produit) REFERENCES Produit(id_produit)
 );
 
-CREATE TABLE Utilisation_ressource(
+CREATE TABLE Utiliser(
    id_tache INT,
    id_ressource VARCHAR(50),
    date_utilisation DATETIME NOT NULL,

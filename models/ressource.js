@@ -14,7 +14,7 @@ export default (sequelize, DataTypes) => {
 
     Ressource.associate = (models) => {
         Ressource.belongsTo(models.Site, { foreignKey: 'id_site' });
-        Ressource.hasMany(models.Utilisation_ressource, { foreignKey: 'id_ressource' });
+        Ressource.hasMany(models.Utiliser, { foreignKey: 'id_ressource' });
     };
 
     return Ressource;

@@ -19,9 +19,9 @@ export default (sequelize, DataTypes) => {
 
     Tache.associate = (models) => {
         Tache.belongsTo(models.Projet, { foreignKey: 'id_projet' });
-        Tache.hasMany(models.Affectation, { foreignKey: 'id_tache' });
-        Tache.hasMany(models.Document_tache, { foreignKey: 'id_tache' });
-        Tache.hasMany(models.Utilisation_ressource, { foreignKey: 'id_tache' });
+        Tache.hasMany(models.Affecter, { foreignKey: 'id_tache' });
+        Tache.hasMany(models.Documenter_tache, { foreignKey: 'id_tache' });
+        Tache.hasMany(models.Utiliser, { foreignKey: 'id_tache' });
     };
 
     return Tache;

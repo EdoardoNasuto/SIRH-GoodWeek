@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-    const Affectation = sequelize.define('Affectation', {
+    const Affecter = sequelize.define('Affecter', {
         id_affectation: {
             type: DataTypes.STRING(50),
             allowNull: false
@@ -14,10 +14,10 @@ export default (sequelize, DataTypes) => {
         },
     }, {});
 
-    Affectation.associate = (models) => {
-        Affectation.belongsTo(models.Employe, { foreignKey: 'id_employe' });
-        Affectation.belongsTo(models.Tache, { foreignKey: 'id_tache' });
+    Affecter.associate = (models) => {
+        Affecter.belongsTo(models.Employe, { foreignKey: 'id_employe' });
+        Affecter.belongsTo(models.Tache, { foreignKey: 'id_tache' });
     };
 
-    return Affectation;
+    return Affecter;
 };

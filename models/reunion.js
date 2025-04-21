@@ -13,8 +13,8 @@ export default (sequelize, DataTypes) => {
     }, {});
 
     Reunion.associate = (models) => {
-        Reunion.hasMany(models.Reunir, { foreignKey: 'id_reunion' });
-        Reunion.hasMany(models.Participant_reunion, { foreignKey: 'id_reunion' });
+        Reunion.hasMany(models.Comporter, { foreignKey: 'id_reunion' });
+        Reunion.hasMany(models.Participer, { foreignKey: 'id_reunion' });
     };
 
     return Reunion;

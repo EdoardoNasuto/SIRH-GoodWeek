@@ -21,9 +21,9 @@ export default (sequelize, DataTypes) => {
         Projet.belongsTo(models.Client, { foreignKey: 'id_client' });
         Projet.hasMany(models.Tache, { foreignKey: 'id_projet' });
         Projet.hasMany(models.Livrable, { foreignKey: 'id_projet' });
-        Projet.hasMany(models.Reunir, { foreignKey: 'id_projet' });
-        Projet.hasMany(models.Document_projet, { foreignKey: 'id_projet' });
-        Projet.hasMany(models.Produit_projet, { foreignKey: 'id_projet' });
+        Projet.hasMany(models.Comporter, { foreignKey: 'id_projet' });
+        Projet.hasMany(models.Documenter_projet, { foreignKey: 'id_projet' });
+        Projet.hasMany(models.Produire, { foreignKey: 'id_projet' });
     };
 
     return Projet;
