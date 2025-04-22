@@ -5,6 +5,8 @@
     "@adminjs/sequelize": "^4.1.1",
     "adminjs": "^7.8.15",
     "express": "^5.1.0",
+    "react": "^18.3.1",
+    "recharts": "^2.15.3",
     "sequelize": "^6.37.7",
     "sequelize-cli": "^6.6.2",
     "sqlite3": "^5.1.7"
