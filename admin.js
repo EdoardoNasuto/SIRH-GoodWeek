@@ -9,6 +9,13 @@ import createPageResource from './utils/pageResource.js';
 import navigation from './navigation.js';
 
 const adminJs = new AdminJS({
+    rootPath: '/',
+    branding: {
+        logo: 'https://cdn-icons-png.flaticon.com/512/1505/1505708.png',
+        companyName: 'GoodWeek',
+        withMadeWithLove: false,
+        favicon: 'https://cdn-icons-png.flaticon.com/512/1505/1505708.png',
+    },
     dashboard: {
         component: Components.dashboard,
         handler: handlers.dashboard,
@@ -29,7 +36,6 @@ const adminJs = new AdminJS({
             handler: handlers.dashboard,
         }),
     ],
-    rootPath: '/admin',
 });
 
 const router = AdminJSExpress.buildRouter(adminJs);
