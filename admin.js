@@ -7,7 +7,7 @@ import handlers from './handlers/index.js';
 const adminJs = new AdminJS({
     dashboard: {
         component: Components.dashboard,
-        handler: handlers.dashboard2,
+        handler: handlers.dashboard,
     },
     componentLoader,
     databases: [db],
