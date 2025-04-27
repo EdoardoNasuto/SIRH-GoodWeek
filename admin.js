@@ -16,24 +16,14 @@ const adminJs = new AdminJS({
         withMadeWithLove: false,
         favicon: 'https://cdn-icons-png.flaticon.com/512/1505/1505708.png',
     },
-    dashboard: {
-        component: Components.dashboard,
-        handler: handlers.dashboard,
-    },
     componentLoader,
     databases: [db],
     resources: [
         createPageResource({
-            name: 'custom-dashboard',
-            navigation: navigation.settings,
-            component: Components.dashboard,
-            handler: handlers.dashboard,
-        }),
-        createPageResource({
-            name: 'another-dashboard',
-            navigation: navigation.settings,
-            component: Components.dashboard,
-            handler: handlers.dashboard,
+            name: 'gender_equity',
+            navigation: navigation.RH,
+            component: Components.gender_equity,
+            handler: handlers.gender_equity,
         }),
     ],
 });

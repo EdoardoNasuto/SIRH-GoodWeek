@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react'
 import { ApiClient } from 'adminjs'
 import BarChartComponent from './charts/barChart.jsx'
-import PieChartComponent from './charts/pieChart.jsx'
 import ChartStyles from './styles/chartStyles.jsx'
 
 const api = new ApiClient()
 
-const Dashboard = () => {
+const gender_equity = () => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await api.getDashboard()
+            const response = await api.resourceAction({ resourceId: 'gender_equity', actionName: 'list' });
             setData(response.data?.data || {})
         }
 
@@ -31,20 +30,20 @@ const Dashboard = () => {
           </h1>
 
           <BarChartComponent
-            title="Égalité Homme / Femme"
-            data={data.hommeFemme}
+            title="Répartition Homme/Femme"
+            data={data.repartition_homme_femme}
             xKey="sexe"
             yKey="count"
           />
     
-          <PieChartComponent
+          <BarChartComponent
             title="Répartition des Types de Contrat"
-            data={data.typeContrat}
-            dataKey="count"
-            nameKey="type"
+            data={data.ecart_salarial_entre_sexes}
+            xKey="sexe"
+            yKey="salaire_moyen"
           />
         </div>
     )
 }
 
-export default Dashboard
+export default gender_equity
