@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
   
 const BarChartComponent = ({ title, data, xKey, yKeys = [], barColors = [] }) => (
     <div className="chart-card">
@@ -9,6 +9,7 @@ const BarChartComponent = ({ title, data, xKey, yKeys = [], barColors = [] }) =>
                 <XAxis dataKey={xKey} />
                 <YAxis allowDecimals={false} />
                 <Tooltip />
+                <Legend />
                 {yKeys.map((key, index) => (
                     <Bar
                         dataKey={key}
