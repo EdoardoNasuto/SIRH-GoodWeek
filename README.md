@@ -39,8 +39,13 @@ Après avoir installé les dépendances :
 node app.js
 ```
 
-Le serveur sera alors disponible à l'adresse suivante :  
-👉 [http://localhost:3000](http://localhost:3000)
+Le serveur sera alors disponible à l'adresse suivante : [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Documentation
+
+Pour apprendre à ajouter des requêtes personnalisées, créer de nouvelles pages ou comprendre le projet de manière générale, consultez la [documentation](./docs)
 
 ---
 
