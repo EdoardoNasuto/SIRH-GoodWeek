@@ -35,11 +35,21 @@ export const gender_equity = async (req, res, context) => {
         }
     );
 
+    const ancienete_par_sexe = await db.sequelize.query(
+        `SELECT sexe, AVG(CAST(julianday(date('now')) - julianday(date_embauche_employe) AS INTEGER)) AS count
+         FROM Employe
+         GROUP BY sexe`,
+        {
+            type: db.Sequelize.QueryTypes.SELECT,
+        }
+    );
+
     return {
         data: {
             repartition_homme_femme,
             ecart_salarial_entre_sexes,
             nombre_de_femme_direction,
+            ancienete_par_sexe,
         }
     };
 };

@@ -49,7 +49,13 @@ const gender_equity = () => {
             xKey="sexe"
             yKeys={["count"]}
           />
-          
+
+          <BarChartComponent
+            title="anciéneté_par_sexe"
+            data={ data.ancienete_par_sexe }
+            xKey="sexe"
+            yKeys={["count"]}
+          />
         </div>
     )
 }
