@@ -25,34 +25,30 @@ const gender_equity = () => {
     return (
         <div style={{ padding: '2rem' }}>
           <ChartStyles />
-    
-          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>
-            Dashboard
-          </h1>
 
           <PieChartComponent
-            title="egalite_homme_femme"
+            title="Egalité homme femme"
             data={ data.egalite_homme_femme }
             nameKey="sexe"
             dataKey="count"
           />
     
           <BarChartComponent
-            title="ecart_salarial_par_sexe"
+            title="Ecart salarial"
             data={ data.ecart_salarial_par_sexe }
             xKey="sexe"
             yKeys={["salaire_moyen"]}
           />
 
           <BarChartComponent
-            title="nb_employe_direction_par_sexe"
+            title="Nombre d'employés par poste"
             data={ data.nb_sexe_par_poste }
             xKey="poste"
             yKeys={["nb_femmes", "nb_hommes"]}
           />
 
           <BarChartComponent
-            title="anciennete_par_sexe"
+            title="Anciennete"
             data={ data.anciennete_par_sexe }
             xKey="sexe"
             yKeys={["count"]}
