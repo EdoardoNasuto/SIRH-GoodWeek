@@ -22,8 +22,7 @@ for (const file of files) {
 
     if (!['.js', '.jsx', '.ts', '.tsx'].includes(ext)) continue;
 
-    const componentPath = `./${file}`;
-    Components[name] = componentLoader.add(name, componentPath);
+    Components[name] = componentLoader.add(name, path.resolve(__dirname, file));
 }
 
 export { componentLoader, Components };
