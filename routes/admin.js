@@ -17,6 +17,10 @@ const adminJs = new AdminJS({
         favicon: 'https://cdn-icons-png.flaticon.com/512/1505/1505708.png',
     },
     componentLoader,
+    dashboard: {
+        component: Components.dashboard,
+        handler: handlers.dashboard,
+    },
     databases: [db],
     resources: [
         createPageResource({
