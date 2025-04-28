@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ApiClient } from 'adminjs'
 import BarChartComponent from './charts/barChart.jsx'
+import PieChartComponent from './charts/pieChart.jsx'
 import ChartStyles from './styles/chartStyles.jsx'
 
 const api = new ApiClient()
@@ -29,11 +30,11 @@ const gender_equity = () => {
             Dashboard
           </h1>
 
-          <BarChartComponent
+          <PieChartComponent
             title="egalite_homme_femme"
             data={ data.egalite_homme_femme }
-            xKey="sexe"
-            yKeys={["count"]}
+            nameKey="sexe"
+            dataKey="count"
           />
     
           <BarChartComponent
