@@ -45,9 +45,9 @@ const gender_equity = () => {
 
           <BarChartComponent
             title="nb_employe_direction_par_sexe"
-            data={ data.nb_employe_direction_par_sexe }
-            xKey="sexe"
-            yKeys={["count"]}
+            data={ data.nb_sexe_par_poste }
+            xKey="poste"
+            yKeys={["nb_femmes", "nb_hommes"]}
           />
 
           <BarChartComponent
