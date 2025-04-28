@@ -1,5 +1,14 @@
 {
+  "name": "sirh-goodweek",
+  "version": "1.0.0",
   "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "rm -rf .adminjs"
+  },
+  "author": "Edoardo Nasuto",
+  "license": "MIT",
   "dependencies": {
     "@adminjs/express": "^6.1.1",
     "@adminjs/sequelize": "^4.1.1",
