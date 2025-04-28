@@ -31,6 +31,12 @@ const projects = () => {
             xKey="client"
             yKeys={["Nombre de projets"]}
           />
+          <BarChartComponent
+            title="Taches par projets"
+            data={ data.taches_par_projets }
+            xKey="projet"
+            yKeys={["Nombre de taches"]}
+          />
         </div>
     )
 }
