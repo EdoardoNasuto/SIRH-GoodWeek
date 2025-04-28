@@ -1,55 +1,27 @@
+import fs from 'fs';
+import path from 'path';
 import db from '../models/index.js';
 
+const readSQLFile = (filename) => fs.readFileSync(path.resolve('queries', `${filename}.sql`), 'utf8');
+
+const queries = [
+    'repartition_homme_femme',
+    'ecart_salarial_entre_sexes',
+    'nombre_de_femme_direction',
+    'ancienete_par_sexe'
+];
+
 export const gender_equity = async (req, res, context) => {
-    // Première requête : répartition des employés par sexe
-    const repartition_homme_femme = await db.sequelize.query(
-        `SELECT sexe, COUNT(*) AS count 
-         FROM Employe
-         GROUP BY sexe`,
-        {
-            type: db.Sequelize.QueryTypes.SELECT,
-        }
+    const results = await Promise.all(
+        queries.map(async (query) => {
+            const queryText = readSQLFile(query);
+            return db.sequelize.query(queryText, { type: db.Sequelize.QueryTypes.SELECT });
+        })
     );
 
-    // Deuxième requête : écart salarial entre les sexes
-    const ecart_salarial_entre_sexes = await db.sequelize.query(
-        `SELECT "Employe"."sexe", 
-                ROUND(AVG(CAST("Contrat"."remuneration_h" AS FLOAT)) * 151.67, 2) AS salaire_moyen
-         FROM "Contrat"
-         JOIN "Employe" ON "Contrat"."id_employe" = "Employe"."id"
-         WHERE "Employe"."sexe" IN ('Féminin', 'Masculin')
-         GROUP BY "Employe"."sexe"`,
-        {
-            type: db.Sequelize.QueryTypes.SELECT,
-        }
+    const response = Object.fromEntries(
+        queries.map((query, index) => [query, results[index]])
     );
 
-    const nombre_de_femme_direction = await db.sequelize.query(
-        `SELECT "Employe"."sexe", COUNT(*) AS count 
-         FROM "Contrat"
-         JOIN "Employe" ON "Contrat"."id_employe" = "Employe"."id"
-         WHERE "Contrat"."poste_contrat" = 'direction'
-         GROUP BY "Employe"."sexe"`,
-        {
-            type: db.Sequelize.QueryTypes.SELECT,
-        }
-    );
-
-    const ancienete_par_sexe = await db.sequelize.query(
-        `SELECT sexe, AVG(CAST(julianday(date('now')) - julianday(date_embauche_employe) AS INTEGER)) AS count
-         FROM Employe
-         GROUP BY sexe`,
-        {
-            type: db.Sequelize.QueryTypes.SELECT,
-        }
-    );
-
-    return {
-        data: {
-            repartition_homme_femme,
-            ecart_salarial_entre_sexes,
-            nombre_de_femme_direction,
-            ancienete_par_sexe,
-        }
-    };
+    return { data: response };
 };
