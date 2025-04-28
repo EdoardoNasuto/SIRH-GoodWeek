@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         date_de_naissance_employe: {
-            type: DataTypes.STRING(50),
+            type: DataTypes.DATE,
             allowNull: false
         },
         sexe: {
@@ -25,10 +25,6 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         telephone_employe: DataTypes.STRING(50),
-        poste_employe: {
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
         role_employe: {
             type: DataTypes.STRING(50),
             allowNull: false

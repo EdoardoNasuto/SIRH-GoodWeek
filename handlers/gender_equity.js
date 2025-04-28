@@ -24,10 +24,22 @@ export const gender_equity = async (req, res, context) => {
         }
     );
 
+    const nombre_de_femme_direction = await db.sequelize.query(
+        `SELECT "Employe"."sexe", COUNT(*) AS count 
+         FROM "Contrat"
+         JOIN "Employe" ON "Contrat"."id_employe" = "Employe"."id"
+         WHERE "Contrat"."poste_contrat" = 'direction'
+         GROUP BY "Employe"."sexe"`,
+        {
+            type: db.Sequelize.QueryTypes.SELECT,
+        }
+    );
+
     return {
         data: {
             repartition_homme_femme,
             ecart_salarial_entre_sexes,
+            nombre_de_femme_direction,
         }
     };
 };

@@ -9,8 +9,16 @@ export default (sequelize, DataTypes) => {
             allowNull: false
         },
         date_fin_contrat: DataTypes.DATE,
+        nb_heure_contrat: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         remuneration_h: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        poste_contrat: {
+            type: DataTypes.STRING(50),
             allowNull: false
         },
         id_employe: {
