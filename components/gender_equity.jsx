@@ -30,29 +30,29 @@ const gender_equity = () => {
           </h1>
 
           <BarChartComponent
-            title="Répartition Homme/Femme"
-            data={ data.repartition_homme_femme }
+            title="egalite_homme_femme"
+            data={ data.egalite_homme_femme }
             xKey="sexe"
             yKeys={["count"]}
           />
     
           <BarChartComponent
-            title="Répartition des Types de Contrat"
-            data={ data.ecart_salarial_entre_sexes }
+            title="ecart_salarial_par_sexe"
+            data={ data.ecart_salarial_par_sexe }
             xKey="sexe"
             yKeys={["salaire_moyen"]}
           />
 
           <BarChartComponent
-            title="Direction par sexe"
-            data={ data.nombre_de_femme_direction }
+            title="nb_employe_direction_par_sexe"
+            data={ data.nb_employe_direction_par_sexe }
             xKey="sexe"
             yKeys={["count"]}
           />
 
           <BarChartComponent
-            title="anciéneté_par_sexe"
-            data={ data.ancienete_par_sexe }
+            title="anciennete_par_sexe"
+            data={ data.anciennete_par_sexe }
             xKey="sexe"
             yKeys={["count"]}
           />
