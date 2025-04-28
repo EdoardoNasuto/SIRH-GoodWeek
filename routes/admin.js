@@ -29,6 +29,12 @@ const adminJs = new AdminJS({
             component: Components.gender_equity,
             handler: handlers.gender_equity,
         }),
+        createPageResource({
+            name: 'projects',
+            navigation: navigation.Manager,
+            component: Components.projects,
+            handler: handlers.projects,
+        }),
     ],
 });
 
