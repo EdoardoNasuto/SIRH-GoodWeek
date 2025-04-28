@@ -1,5 +1,5 @@
 import express from 'express';
-import { adminJs, router } from './admin.js';
+import { adminJs, router } from './routes/admin.js';
 import db from './models/index.js';
 
 const app = express();

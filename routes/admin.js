@@ -1,9 +1,9 @@
 import AdminJS from 'adminjs';
 import AdminJSExpress from '@adminjs/express';
 
-import db from './models/index.js';
-import { componentLoader, Components } from './components/index.js';
-import handlers from './handlers/index.js';
+import db from '../models/index.js';
+import { componentLoader, Components } from '../components/index.js';
+import handlers from '../handlers/index.js';
 
 import createPageResource from './utils/pageResource.js';
 import navigation from './navigation.js';
